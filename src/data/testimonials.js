@@ -1,0 +1,8 @@
+export const TESTIMONIALS = [
+  { name: 'Rajesh Patil', place: 'Thane West', type: 'Residential Rooftop Solar', text: "Our monthly electricity bill dropped sharply after the 3 kW rooftop system. The team handled the PM Surya Ghar subsidy paperwork from start to finish – no running around for us." },
+  { name: 'Meenal Deshmukh', place: 'Mulund, Mumbai', type: 'PM Surya Ghar Subsidy', text: "I was confused about the subsidy process. HERGA'S SOLUTIONS explained every step clearly, finished the installation on time and the subsidy reached our account." },
+  { name: 'Vikram Shah', place: 'Bhiwandi', type: 'Factory Solar & Electrical', text: "They installed solar on our factory roof and managed the electrical work too. One team for everything – professional, safe and always reachable." },
+  { name: 'Anita Kulkarni', place: 'Pune', type: 'CCTV & Access Control', text: "Clean CCTV and access control installation at our office, with a sensible AMC. Service calls are answered quickly." },
+  { name: 'Sanjay Mehta', place: 'Navi Mumbai', type: 'Loading Bay Equipment', text: "Dock ramps were supplied and fitted without disturbing our operations. Quality equipment and genuine after-sales support." },
+  { name: 'Farhan Sheikh', place: 'Thane', type: 'Fabrication & Steel Sheds', text: "Our steel shed was delivered on schedule with strong workmanship. Honest pricing and clear communication throughout." },
+];

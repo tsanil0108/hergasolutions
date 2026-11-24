@@ -1,0 +1,86 @@
+/* ---------- Header ---------- */
+.header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); transition: box-shadow .3s, height .3s; }
+.header.is-scrolled { box-shadow: 0 6px 24px rgba(18,61,43,.12); }
+.header__inner { display: flex; align-items: center; gap: 28px; height: var(--header-h); }
+.header.is-scrolled .header__inner { height: 68px; }
+.header__inner { transition: height .3s var(--ease); }
+
+.logo { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.logo__img { height: 58px; width: auto; transition: height .3s; }
+.header.is-scrolled .logo__img { height: 50px; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.15; }
+.logo__name { font-weight: 700; font-size: 1.28rem; color: var(--primary); letter-spacing: .005em; }
+.logo__tag { font-size: .68rem; color: var(--ink); max-width: 190px; margin-top: 3px; line-height: 1.3; }
+.logo--dark .logo__name { color: #fff; }
+.logo--dark .logo__img { height: 72px; border-radius: var(--r-xs); }
+
+.nav { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.nav__link { position: relative; display: inline-flex; align-items: center; gap: 2px; padding: 10px 14px; font-size: .94rem; font-weight: 500; color: var(--ink); border-radius: var(--r-xs); transition: color .2s; }
+.nav__link::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: 2px; height: 2px; background: var(--emerald); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.nav__link:hover, .nav__link.is-active { color: var(--emerald); }
+.nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
+.nav__link--split { padding: 0; }
+.nav__link--split::after { left: 14px; right: 36px; }
+.nav__dd-label { padding: 10px 2px 10px 14px; }
+.nav__chev { background: none; border: 0; padding: 10px 10px 10px 4px; display: grid; place-items: center; color: inherit; }
+.nav__chev svg { transition: transform .25s; }
+.is-flipped { transform: rotate(180deg); }
+.nav__dropdown { position: relative; }
+.nav__panel { position: absolute; top: calc(100% + 6px); left: -40px; min-width: 360px; background: #fff; border-radius: var(--r-md); box-shadow: var(--shadow-lg); padding: 10px; border: 1px solid var(--line); z-index: 20; }
+.nav__panel-link { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: var(--r-sm); font-size: .9rem; font-weight: 500; transition: background .2s, color .2s, transform .2s; }
+.nav__panel-link:hover { background: var(--light); color: var(--emerald); transform: translateX(4px); }
+.nav__panel-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--light); color: var(--emerald); flex-shrink: 0; }
+.header__burger { display: none; margin-left: auto; background: none; border: 0; color: var(--primary); padding: 8px; }
+
+.drawer__scrim { position: fixed; inset: 0; background: rgba(8,30,20,.55); z-index: 140; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(88vw, 380px); background: #fff; z-index: 150; display: flex; flex-direction: column; box-shadow: var(--shadow-lg); }
+.drawer__top { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+.drawer__title { font-weight: 600; color: var(--primary); }
+.drawer__close { background: none; border: 0; color: var(--primary); padding: 4px; }
+.drawer__nav { flex: 1; overflow-y: auto; padding: 8px 12px; }
+.drawer__row { display: flex; align-items: center; justify-content: space-between; }
+.drawer__link { display: block; flex: 1; padding: 14px 10px; font-weight: 500; border-radius: var(--r-xs); }
+.drawer__link.is-active { color: var(--emerald); }
+.drawer__toggle { background: none; border: 0; padding: 12px; color: var(--primary); }
+.drawer__sub { overflow: hidden; background: var(--light); border-radius: var(--r-sm); margin: 0 6px 6px; }
+.drawer__sub a { display: flex; align-items: center; gap: 10px; padding: 11px 14px; font-size: .88rem; color: var(--primary); }
+.drawer__cta { margin: 16px 20px 24px; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--primary); color: #dcebe2; margin-top: 24px; }
+.footer__grid { display: grid; grid-template-columns: 1.15fr .7fr 1.3fr 1.2fr; gap: 40px; padding: 64px 0 48px; }
+.footer__brand p { margin-top: 18px; font-size: .92rem; max-width: 280px; color: #c3d9cb; }
+.footer__social { display: flex; gap: 10px; margin-top: 20px; }
+.footer__social a { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.1); transition: background .25s, transform .25s; }
+.footer__social a:hover { background: var(--fresh); transform: translateY(-3px); }
+.footer__col h3 { color: #fff; font-size: 1.02rem; font-weight: 600; margin-bottom: 18px; }
+.footer__col li { margin-bottom: 9px; font-size: .9rem; }
+.footer__col a { color: #cfe3d6; transition: color .2s, padding-left .2s; }
+.footer__col a:hover { color: #fff; padding-left: 4px; }
+.footer__contact li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.footer__contact svg { flex-shrink: 0; margin-top: 3px; color: var(--fresh); }
+.footer__contact a:hover { padding-left: 0; }
+.footer__bar { border-top: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.18); font-size: .82rem; }
+.footer__bar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 18px 0; }
+.footer__legal { display: flex; gap: 12px; padding-right: 76px; }
+.footer__legal a:hover { color: #fff; }
+
+/* ---------- WhatsApp float ---------- */
+.wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 90; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(37,211,102,.45); }
+.wa-float__ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa); animation: ring 2.4s ease-out infinite; }
+@keyframes ring { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.7); opacity: 0; } }
+
+@media (max-width: 1080px) {
+  .nav, .header__cta { display: none; }
+  .header__burger { display: block; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  :root { --header-h: 68px; }
+  .logo__img { height: 46px; }
+  .logo__name { font-size: 1.02rem; }
+  .logo__tag { font-size: .58rem; max-width: 150px; }
+  .footer__grid { grid-template-columns: 1fr; gap: 32px; padding: 48px 0 32px; }
+  .footer__legal { padding-right: 0; }
+  .wa-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+}
